@@ -9,6 +9,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-ai-darker text-slate-300 font-sans antialiased overflow-x-hidden;
   }
