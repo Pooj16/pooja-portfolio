@@ -1,19 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import poojaImg from "@/assets/pooja.png";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Pooja S — Software Engineer & Data Science Student" },
-      { name: "description", content: "Portfolio of Pooja S, a software engineer and data science student at Dr. Mahalingam College of Engineering and Technology, building scalable AI-powered systems and applications." },
-      { property: "og:title", content: "Pooja S — Software Engineer" },
-      { property: "og:description", content: "Software engineer and data science student building AI-powered, scalable applications." },
-    ],
-  }),
-  component: Portfolio,
-});
 
 const projects = [
   {
@@ -69,7 +56,7 @@ const achievements = [
   { year: "2023", title: "Foundation in Data Science", note: "IIT Madras" },
 ];
 
-function Portfolio() {
+export default function App() {
   const [time, setTime] = useState("");
   useEffect(() => {
     const update = () => {
