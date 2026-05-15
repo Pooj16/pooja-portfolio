@@ -104,7 +104,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.1 }}
                 className="font-serif text-[clamp(3.5rem,11vw,11rem)] leading-[0.9] tracking-tight text-balance"
               >
-                Pooja <span className="italic gold-text">Shivkumar</span>
+                Pooja <span className="italic gold-text">Shivakumar</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -122,7 +122,7 @@ export default function App() {
               className="md:col-span-4 relative"
             >
               <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-border" style={{ boxShadow: "var(--shadow-soft)" }}>
-                <img src={poojaImg} alt="Pooja Shivkumar" className="w-full h-full object-cover grayscale-[15%] contrast-105" />
+                <img src={poojaImg} alt="Pooja Shivakumar" className="w-full h-full object-cover grayscale-[15%] contrast-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
               
@@ -297,7 +297,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-          <div>© 2026 Pooja Shivkumar. All rights reserved.</div>
+          <div>© 2026 Pooja Shivakumar. All rights reserved.</div>
           <div>Designed & built with intent.</div>
         </div>
       </footer>
