@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import poojaImg from "@/assets/pooja.png";
+import resumePdf from "@/assets/Pooja-Shivakumar-Resume.pdf";
 
 const projects = [
   {
@@ -59,7 +60,6 @@ const experience = [
 
 const skills = {
   Languages: ["Python", "JavaScript", "Java", "SQL", "C"],
-
   "Testing & Automation": [
     "PyTest",
     "Unit Testing",
@@ -67,7 +67,6 @@ const skills = {
     "AI Output Evaluation",
     "Test Script Writing",
   ],
-
   "Frameworks & Tools": [
     "Flask",
     "FastAPI",
@@ -78,7 +77,6 @@ const skills = {
     "REST APIs",
     "Streamlit",
   ],
-
   "AI / ML": [
     "Scikit-learn",
     "Pandas",
@@ -90,9 +88,7 @@ const skills = {
     "RAG",
     "Vector Search",
   ],
-
   Databases: ["MySQL", "MongoDB", "PostgreSQL", "DBMS"],
-
   "CS & Tools": [
     "Git",
     "GitHub",
@@ -210,6 +206,7 @@ export default function App() {
           </motion.div>
 
           <div className="grid md:grid-cols-12 gap-10 items-end">
+            {/* Hero Left */}
             <div className="md:col-span-8">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -233,13 +230,37 @@ export default function App() {
                   software engineering
                 </span>{" "}
                 and{" "}
-                <span className="text-foreground">data science</span>.
-                Currently working as a Software Engineering Intern while
+                <span className="text-foreground">
+                  data science
+                </span>
+                . Currently working as a Software Engineering Intern while
                 pursuing B.Tech in AI & Data Science and a BS in Data Science
                 from IIT Madras.
               </motion.p>
+
+              {/* Resume + Work Buttons */}
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={resumePdf}
+                  download="Pooja-Shivakumar-Resume.pdf"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:gap-5 transition-all duration-500"
+                  style={{ boxShadow: "var(--shadow-gold)" }}
+                >
+                  Download Resume
+                  <span className="text-xl">↓</span>
+                </a>
+
+                <a
+                  href="#work"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border text-foreground hover:border-primary hover:text-primary transition-colors"
+                >
+                  View My Work
+                  <span className="text-xl">→</span>
+                </a>
+              </div>
             </div>
 
+            {/* Hero Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -261,6 +282,7 @@ export default function App() {
             </motion.div>
           </div>
 
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -301,6 +323,7 @@ export default function App() {
             <div className="pt-4 grid grid-cols-2 gap-6 font-mono text-xs uppercase tracking-widest">
               <div>
                 <div className="text-primary mb-2">Focus</div>
+
                 <div className="text-foreground/80 normal-case font-sans text-sm">
                   Software Engineering · AI/ML · RAG
                 </div>
@@ -308,6 +331,7 @@ export default function App() {
 
               <div>
                 <div className="text-primary mb-2">Currently</div>
+
                 <div className="text-foreground/80 normal-case font-sans text-sm">
                   B.Tech AI & DS · BS Data Science
                 </div>
@@ -393,7 +417,9 @@ export default function App() {
                   {e.role}
                 </h3>
 
-                <div className="text-foreground/80 mt-1">{e.org}</div>
+                <div className="text-foreground/80 mt-1">
+                  {e.org}
+                </div>
 
                 <p className="text-muted-foreground mt-3 leading-relaxed">
                   {e.detail}
@@ -414,7 +440,10 @@ export default function App() {
 
             <div className="space-y-8">
               {Object.entries(skills).map(([cat, items]) => (
-                <div key={cat} className="border-t border-border pt-5">
+                <div
+                  key={cat}
+                  className="border-t border-border pt-5"
+                >
                   <div className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
                     {cat}
                   </div>
@@ -428,7 +457,9 @@ export default function App() {
                         {s}
 
                         {i < items.length - 1 && (
-                          <span className="text-border ml-6">·</span>
+                          <span className="text-border ml-6">
+                            ·
+                          </span>
                         )}
                       </span>
                     ))}
@@ -450,14 +481,19 @@ export default function App() {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.08,
+                  }}
                   className="p-5 border border-border rounded-sm bg-card/40 hover:border-primary/60 transition-colors"
                 >
                   <div className="font-mono text-xs text-primary">
                     {a.year}
                   </div>
 
-                  <div className="font-serif text-xl mt-1">{a.title}</div>
+                  <div className="font-serif text-xl mt-1">
+                    {a.title}
+                  </div>
 
                   <div className="text-sm text-muted-foreground mt-1">
                     {a.note}
@@ -531,18 +567,31 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-          <div>© 2026 Pooja Shivakumar. All rights reserved.</div>
-          <div>Designed & built with intent.</div>
+          <div>
+            © 2026 Pooja Shivakumar. All rights reserved.
+          </div>
+
+          <div>
+            Designed & built with intent.
+          </div>
         </div>
       </footer>
     </div>
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
   return (
     <div>
-      <div className="font-serif text-3xl md:text-4xl gold-text">{value}</div>
+      <div className="font-serif text-3xl md:text-4xl gold-text">
+        {value}
+      </div>
 
       <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
         {label}
