@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+\import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import poojaImg from "@/assets/pooja.png";
 import resumePdf from "@/assets/Pooja-Shivakumar-Resume.pdf";
@@ -10,6 +10,7 @@ const projects = [
     period: "Aug 2026 — Sep 2026",
     stack: ["Python", "RAG", "LLM", "Vector Search"],
     desc: "A RAG-based developer tool that indexes Frappe/ERPNext codebase logic using vector search and LLM reasoning to recommend code reuse, reducing duplicate implementations and supporting maintainable automation workflows.",
+    github: "https://github.com/SowmiyaS06/frappe-project",
   },
   {
     no: "02",
@@ -17,6 +18,7 @@ const projects = [
     period: "Oct 2025 — Mar 2026",
     stack: ["Python", "SQL", "AI APIs", "Git"],
     desc: "A full-stack ATS-based candidate filtering platform with AI API integration for automated recruitment workflows, including evaluation and validation of AI-generated screening outputs.",
+    github: "https://github.com/Pooj16/PRO-HRM",
   },
   {
     no: "03",
@@ -24,6 +26,7 @@ const projects = [
     period: "Feb 2025 — Mar 2025",
     stack: ["Python", "Streamlit", "OpenAI", "Whisper"],
     desc: "A multimodal AI chatbot that extracts PDF and DOCX content, transcribes audio using Whisper, translates across 5 languages, and uses PyTest to validate AI outputs and API responses.",
+    github: "https://github.com/Pooj16/voice-chatbot-for-documents",
   },
   {
     no: "04",
@@ -31,6 +34,7 @@ const projects = [
     period: "Jan 2026 — Feb 2026",
     stack: ["Python", "CNN", "Scikit-learn", "Git"],
     desc: "An ML classification system using CNN to detect phishing websites from visual patterns, with precision and recall evaluation to improve the reliability of security decisions.",
+    github: "https://github.com/Pooj16/image-phishing",
   },
 ];
 
@@ -206,7 +210,6 @@ export default function App() {
           </motion.div>
 
           <div className="grid md:grid-cols-12 gap-10 items-end">
-            {/* Hero Left */}
             <div className="md:col-span-8">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -230,15 +233,13 @@ export default function App() {
                   software engineering
                 </span>{" "}
                 and{" "}
-                <span className="text-foreground">
-                  data science
-                </span>
-                . Currently working as a Software Engineering Intern while
+                <span className="text-foreground">data science</span>.
+                Currently working as a Software Engineering Intern while
                 pursuing B.Tech in AI & Data Science and a BS in Data Science
                 from IIT Madras.
               </motion.p>
 
-              {/* Resume + Work Buttons */}
+              {/* Resume Buttons */}
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href={resumePdf}
@@ -260,7 +261,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Hero Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -369,6 +369,16 @@ export default function App() {
                 <div className="font-mono text-xs text-muted-foreground mt-2">
                   {p.period}
                 </div>
+
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-widest text-primary hover:text-foreground transition-colors"
+                >
+                  View on GitHub
+                  <span className="text-sm">↗</span>
+                </a>
               </div>
 
               <p className="md:col-span-4 text-muted-foreground leading-relaxed">
