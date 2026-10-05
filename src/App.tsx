@@ -9,7 +9,7 @@ const projects = [
     title: "Logic Reuse Assistant for Frappe/ERPNext",
     period: "Aug 2026 — Sep 2026",
     stack: ["Python", "RAG", "LLM", "Vector Search"],
-    desc: "A RAG-based developer tool that indexes Frappe/ERPNext codebase logic using vector search and LLM reasoning to recommend code reuse, reducing duplicate implementations and supporting maintainable automation workflows.",
+    desc: "A RAG-based developer tool that indexes Frappe/ERPNext codebase logic using vector search and LLM reasoning to recommend code reuse, reduce duplicate implementations, and support maintainable automation workflows.",
     github: "https://github.com/SowmiyaS06/frappe-project",
   },
   {
@@ -38,10 +38,42 @@ const projects = [
   },
 ];
 
+const education = [
+  {
+    degree: "B.Tech — Artificial Intelligence & Data Science",
+    institution: "Dr. Mahalingam College of Engineering and Technology",
+    location: "Pollachi, Tamil Nadu",
+    period: "2023 — 2027",
+    result: "CGPA 8.6 · No Backlogs",
+  },
+  {
+    degree: "BS — Data Science",
+    institution: "Indian Institute of Technology Madras",
+    location: "Online Degree Programme",
+    period: "2023 — Present",
+    result: "Concurrent Degree",
+  },
+  {
+    degree: "Class XII",
+    institution: "Higher Secondary Education",
+    location: "Tamil Nadu",
+    period: "2024",
+    result: "90%",
+  },
+  {
+    degree: "Class X",
+    institution: "Secondary Education",
+    location: "Tamil Nadu",
+    period: "2021",
+    result: "91%",
+  },
+];
+
 const experience = [
   {
     role: "Software Engineering Intern",
-    org: "Tridots Tech Pvt. Ltd., Chennai",
+    org: "Tridots Tech Pvt. Ltd.",
+    location: "Chennai",
     period: "2026 — Present",
     detail:
       "Developing web applications using Frappe Framework with Python, JavaScript, and Bootstrap, including form customization, scripting, UI development, and reusable, testable code modules on the ERPNext platform.",
@@ -49,6 +81,7 @@ const experience = [
   {
     role: "AI & Software Development Intern",
     org: "Orcus Info",
+    location: "India",
     period: "May 2025 — Jun 2025",
     detail:
       "Architected an AI-powered web platform using Node.js, React, and REST APIs, integrating AI APIs to automate product features and evaluating AI-generated outputs for correctness, reducing manual effort by 40%.",
@@ -56,6 +89,7 @@ const experience = [
   {
     role: "AIML Intern",
     org: "Cube AI Solutions Tech Pvt. Ltd.",
+    location: "India",
     period: "Jan 2025 — Apr 2025",
     detail:
       "Engineered reusable, testable Python modules using Pandas, NumPy, and Scikit-learn; deployed 2 production-ready REST API workflows and validated model outputs for consistency and accuracy, improving performance by 15%.",
@@ -139,14 +173,15 @@ export default function App() {
 
     update();
 
-    const i = setInterval(update, 30000);
+    const interval = setInterval(update, 30000);
 
-    return () => clearInterval(i);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Nav */}
+      {/* ================= NAV ================= */}
+
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
           <a href="#top" className="font-serif text-xl tracking-tight">
@@ -155,17 +190,24 @@ export default function App() {
 
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a
-              href="#work"
-              className="hover:text-foreground transition-colors"
-            >
-              Work
-            </a>
-
-            <a
               href="#about"
               className="hover:text-foreground transition-colors"
             >
               About
+            </a>
+
+            <a
+              href="#education"
+              className="hover:text-foreground transition-colors"
+            >
+              Education
+            </a>
+
+            <a
+              href="#work"
+              className="hover:text-foreground transition-colors"
+            >
+              Work
             </a>
 
             <a
@@ -189,7 +231,8 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* ================= HERO ================= */}
+
       <section
         id="top"
         className="relative pt-40 pb-32 px-6 md:px-10 grain"
@@ -210,6 +253,8 @@ export default function App() {
           </motion.div>
 
           <div className="grid md:grid-cols-12 gap-10 items-end">
+            {/* Hero Text */}
+
             <div className="md:col-span-8">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -218,7 +263,9 @@ export default function App() {
                 className="font-serif text-[clamp(3.5rem,11vw,11rem)] leading-[0.9] tracking-tight text-balance"
               >
                 Pooja{" "}
-                <span className="italic gold-text">Shivakumar</span>
+                <span className="italic gold-text">
+                  Shivakumar
+                </span>
               </motion.h1>
 
               <motion.p
@@ -227,19 +274,32 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="mt-10 max-w-xl text-lg md:text-xl text-muted-foreground leading-relaxed"
               >
-                Building reliable software and AI-powered systems at the
+                Software engineering and AI enthusiast building reliable
+                applications, intelligent systems, and developer tools at the
                 intersection of{" "}
                 <span className="text-foreground">
                   software engineering
                 </span>{" "}
                 and{" "}
-                <span className="text-foreground">data science</span>.
-                Currently working as a Software Engineering Intern while
-                pursuing B.Tech in AI & Data Science and a BS in Data Science
-                from IIT Madras.
+                <span className="text-foreground">
+                  data science
+                </span>
+                .
               </motion.p>
 
-              {/* Resume Buttons */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.55 }}
+                className="mt-4 max-w-xl text-base text-muted-foreground leading-relaxed"
+              >
+                Currently a Software Engineering Intern while pursuing B.Tech
+                in AI & Data Science and a concurrent BS in Data Science from
+                IIT Madras.
+              </motion.p>
+
+              {/* CTA Buttons */}
+
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href={resumePdf}
@@ -260,6 +320,8 @@ export default function App() {
                 </a>
               </div>
             </div>
+
+            {/* Hero Image */}
 
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -283,6 +345,7 @@ export default function App() {
           </div>
 
           {/* Stats */}
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -297,32 +360,38 @@ export default function App() {
         </div>
       </section>
 
-      {/* About */}
+      {/* ================= ABOUT ================= */}
+
       <Section id="about" eyebrow="01 — About">
         <div className="grid md:grid-cols-12 gap-10">
           <h2 className="md:col-span-5 font-serif text-4xl md:text-5xl leading-tight text-balance">
-            Engineering <span className="italic">elegant</span> systems with{" "}
-            <span className="gold-text italic">intent</span>.
+            Engineering{" "}
+            <span className="italic">elegant</span> systems with{" "}
+            <span className="gold-text italic">
+              intent
+            </span>
+            .
           </h2>
 
           <div className="md:col-span-6 md:col-start-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              I'm a software engineering and AI enthusiast passionate about
-              translating ambiguous problems into clean, maintainable
-              solutions. My background in data science, machine learning, and
-              software development lets me work across AI-powered applications,
-              backend systems, and developer tools.
+              I'm passionate about translating ambiguous problems into clean,
+              maintainable solutions. My background in data science, machine
+              learning, and software development lets me work across
+              AI-powered applications, backend systems, and developer tools.
             </p>
 
             <p>
               I enjoy building systems that are reliable, testable, and useful
-              — from AI-powered recruitment platforms to RAG-based developer
-              tools and Frappe/ERPNext applications.
+              — from AI-powered recruitment platforms and RAG-based developer
+              tools to Frappe/ERPNext applications and REST API workflows.
             </p>
 
             <div className="pt-4 grid grid-cols-2 gap-6 font-mono text-xs uppercase tracking-widest">
               <div>
-                <div className="text-primary mb-2">Focus</div>
+                <div className="text-primary mb-2">
+                  Focus
+                </div>
 
                 <div className="text-foreground/80 normal-case font-sans text-sm">
                   Software Engineering · AI/ML · RAG
@@ -330,7 +399,9 @@ export default function App() {
               </div>
 
               <div>
-                <div className="text-primary mb-2">Currently</div>
+                <div className="text-primary mb-2">
+                  Currently
+                </div>
 
                 <div className="text-foreground/80 normal-case font-sans text-sm">
                   B.Tech AI & DS · BS Data Science
@@ -341,10 +412,81 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Work */}
-      <Section id="work" eyebrow="02 — Selected Work">
+      {/* ================= EDUCATION ================= */}
+
+      <Section id="education" eyebrow="02 — Education">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-5">
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Learning with{" "}
+              <span className="italic gold-text">
+                purpose
+              </span>
+              .
+            </h2>
+
+            <p className="mt-6 text-muted-foreground leading-relaxed max-w-md">
+              Building a strong foundation across artificial intelligence,
+              software engineering, data science, and computer science while
+              pursuing two concurrent higher-education programs.
+            </p>
+          </div>
+
+          <div className="md:col-span-7">
+            <div className="space-y-0">
+              {education.map((edu, i) => (
+                <motion.div
+                  key={edu.degree}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: i * 0.08,
+                  }}
+                  className="border-t border-border py-7 last:border-b"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                    <div>
+                      <h3 className="font-serif text-2xl md:text-3xl">
+                        {edu.degree}
+                      </h3>
+
+                      <div className="text-foreground/80 mt-2">
+                        {edu.institution}
+                      </div>
+
+                      <div className="text-sm text-muted-foreground mt-1">
+                        {edu.location}
+                      </div>
+                    </div>
+
+                    <div className="md:text-right shrink-0">
+                      <div className="font-mono text-xs text-primary uppercase tracking-widest">
+                        {edu.period}
+                      </div>
+
+                      <div className="font-mono text-xs text-muted-foreground mt-2">
+                        {edu.result}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ================= PROJECTS ================= */}
+
+      <Section id="work" eyebrow="03 — Selected Work">
         <h2 className="font-serif text-5xl md:text-7xl mb-16 text-balance">
-          Projects, <span className="italic gold-text">recently</span>.
+          Projects,{" "}
+          <span className="italic gold-text">
+            recently
+          </span>
+          .
         </h2>
 
         <div className="space-y-px">
@@ -353,8 +495,14 @@ export default function App() {
               key={p.no}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              viewport={{
+                once: true,
+                margin: "-80px",
+              }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.1,
+              }}
               className="group border-t border-border last:border-b py-8 md:py-10 grid md:grid-cols-12 gap-6 items-start hover:bg-card/40 transition-colors duration-500 px-2 md:px-4 -mx-2 md:-mx-4 rounded-sm"
             >
               <div className="md:col-span-1 font-mono text-xs text-primary pt-2">
@@ -374,10 +522,12 @@ export default function App() {
                   href={p.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-widest text-primary hover:text-foreground transition-colors"
+                  className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 border border-border rounded-full font-mono text-[10px] uppercase tracking-widest text-primary hover:border-primary hover:text-foreground transition-colors"
                 >
-                  View on GitHub
-                  <span className="text-sm">↗</span>
+                  GitHub
+                  <span className="text-sm">
+                    ↗
+                  </span>
                 </a>
               </div>
 
@@ -400,11 +550,16 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Experience */}
-      <Section id="experience" eyebrow="03 — Experience">
+      {/* ================= EXPERIENCE ================= */}
+
+      <Section id="experience" eyebrow="04 — Experience">
         <div className="grid md:grid-cols-12 gap-10">
           <h2 className="md:col-span-5 font-serif text-4xl md:text-5xl leading-tight">
-            Where I've <span className="italic">shipped</span>.
+            Where I've{" "}
+            <span className="italic">
+              shipped
+            </span>
+            .
           </h2>
 
           <div className="md:col-span-7 space-y-12">
@@ -412,9 +567,15 @@ export default function App() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.1,
+                }}
                 className="border-l-2 border-primary/40 pl-6 relative"
               >
                 <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-primary" />
@@ -431,6 +592,10 @@ export default function App() {
                   {e.org}
                 </div>
 
+                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
+                  {e.location}
+                </div>
+
                 <p className="text-muted-foreground mt-3 leading-relaxed">
                   {e.detail}
                 </p>
@@ -440,56 +605,72 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Skills + Achievements */}
-      <Section id="skills" eyebrow="04 — Toolkit & Recognition">
+      {/* ================= SKILLS + HONORS ================= */}
+
+      <Section id="skills" eyebrow="05 — Toolkit & Recognition">
         <div className="grid md:grid-cols-12 gap-16">
           <div className="md:col-span-7">
             <h2 className="font-serif text-4xl md:text-5xl mb-10">
-              The <span className="italic gold-text">stack</span>.
+              The{" "}
+              <span className="italic gold-text">
+                stack
+              </span>
+              .
             </h2>
 
             <div className="space-y-8">
-              {Object.entries(skills).map(([cat, items]) => (
-                <div
-                  key={cat}
-                  className="border-t border-border pt-5"
-                >
-                  <div className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
-                    {cat}
-                  </div>
+              {Object.entries(skills).map(
+                ([cat, items]) => (
+                  <div
+                    key={cat}
+                    className="border-t border-border pt-5"
+                  >
+                    <div className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
+                      {cat}
+                    </div>
 
-                  <div className="flex flex-wrap gap-x-6 gap-y-2 font-serif text-2xl md:text-3xl">
-                    {items.map((s, i) => (
-                      <span
-                        key={s}
-                        className="hover:italic hover:text-primary transition-all cursor-default"
-                      >
-                        {s}
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 font-serif text-2xl md:text-3xl">
+                      {items.map((s, i) => (
+                        <span
+                          key={s}
+                          className="hover:italic hover:text-primary transition-all cursor-default"
+                        >
+                          {s}
 
-                        {i < items.length - 1 && (
-                          <span className="text-border ml-6">
-                            ·
-                          </span>
-                        )}
-                      </span>
-                    ))}
+                          {i < items.length - 1 && (
+                            <span className="text-border ml-6">
+                              ·
+                            </span>
+                          )}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
 
           <div className="md:col-span-5">
             <h2 className="font-serif text-4xl md:text-5xl mb-10">
-              <span className="italic">Honors</span>.
+              <span className="italic">
+                Honors
+              </span>
+              .
             </h2>
 
             <div className="space-y-5">
               {achievements.map((a, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{
+                    opacity: 0,
+                    y: 10,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.5,
@@ -515,14 +696,18 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Contact */}
+      {/* ================= CONTACT ================= */}
+
       <section
         id="contact"
         className="relative py-32 md:py-48 px-6 md:px-10 border-t border-border grain"
       >
         <div
           className="absolute inset-0"
-          style={{ background: "var(--gradient-radial)" }}
+          style={{
+            background:
+              "var(--gradient-radial)",
+          }}
         />
 
         <div className="relative max-w-7xl mx-auto text-center">
@@ -531,7 +716,10 @@ export default function App() {
           </div>
 
           <h2 className="font-serif text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-tight text-balance">
-            Have a <span className="italic gold-text">project</span>
+            Have a{" "}
+            <span className="italic gold-text">
+              project
+            </span>
             <br />
             in mind?
           </h2>
@@ -539,10 +727,14 @@ export default function App() {
           <a
             href="mailto:pooja16.shivk@gmail.com"
             className="inline-flex items-center gap-3 mt-14 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:gap-5 transition-all duration-500"
-            style={{ boxShadow: "var(--shadow-gold)" }}
+            style={{
+              boxShadow: "var(--shadow-gold)",
+            }}
           >
             pooja16.shivk@gmail.com
-            <span className="text-xl">→</span>
+            <span className="text-xl">
+              →
+            </span>
           </a>
 
           <div className="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -574,7 +766,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ================= FOOTER ================= */}
+
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
           <div>
