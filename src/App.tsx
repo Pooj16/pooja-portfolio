@@ -1,4 +1,4 @@
-\import { motion } from "motion/react";
+import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import poojaImg from "@/assets/pooja.png";
 import resumePdf from "@/assets/Pooja-Shivakumar-Resume.pdf";
